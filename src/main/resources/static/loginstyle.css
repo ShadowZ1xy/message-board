@@ -1,0 +1,50 @@
+.main-section {
+    margin: 170px auto 0;
+    padding: 0;
+}
+
+.modal-content {
+    padding: 0 18px;
+    box-shadow: 0 0 3px #848484;
+}
+
+.user-img {
+    margin-top: -80px;
+    margin-bottom: 35px;
+}
+
+.user-img img {
+    height: 140px;
+    width: 140px;
+    border-radius: 5px;
+    box-shadow: 0 0 4px #303030;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group input {
+    font-weight: bold;
+    height: 40px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 16px;
+}
+
+.btn {
+    margin: 5px 0 25px;
+    font-size: 17px;
+    padding: 7px 14px;
+    border-radius: 5px;
+    box-shadow: 0 2px #2B4764;
+}
+
+.btn i {
+    margin-right: 3px;
+}
+
+.new-user {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
