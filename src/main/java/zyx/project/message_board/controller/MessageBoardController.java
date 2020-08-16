@@ -23,7 +23,7 @@ public class MessageBoardController {
 
 
     @GetMapping("/board")
-    public String homePage(Model model) {
+    public String boardPage(Model model) {
         Iterable<Message> messages = messageService.getAll();
         Collections.reverse((List<?>) messages);
         model.addAttribute("messages", messages);
@@ -35,15 +35,21 @@ public class MessageBoardController {
                              Message message,
                              Model model) {
         messageService.addMessage(message, user);
-        return homePage(model);
+        return boardPage(model);
     }
 
     @PostMapping("filterMessages")
-    public String filterMessages(String filter, Model model) {
-        if (filter == null || filter.isEmpty()) {
-            return homePage(model);
+    public String filterMessages(Message message,
+                                 Model model) {
+        if (messageService.checkMessageIsEmpty(message)) {
+            return boardPage(model);
         }
-        Iterable<Message> messages = messageService.findByTag(filter);
+        Iterable<Message> messages = messageService.findByManyParams(
+                message.getText(),
+                message.getTag(),
+                message.getId()
+        );
+        Collections.reverse((List<?>) messages);
         model.addAttribute("messages", messages);
         return "board";
     }

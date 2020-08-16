@@ -1,10 +1,17 @@
 package zyx.project.message_board.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import zyx.project.message_board.entity.Message;
 
 public interface MessageRepository extends JpaRepository<Message, Long> {
-    Iterable<Message> findByTag(String tag);
-
-    Iterable<Message> findByAuthor_UsernameOrTagOrTextContainsOrId(String author_username, String tag, String text, Long id);
+    @Query(value = "SELECT * FROM message as m WHERE " +
+            "(?1 IS NULL OR m.text LIKE %?1%) AND " +
+            "(?2 IS NULL OR m.tag LIKE %?2%) AND " +
+            "(?3 IS NULL OR m.message_id = ?3) ",
+            nativeQuery = true)
+    Iterable<Message> findByManyParams(String text,
+                                       String tag,
+                                       Long id
+    );
 }

@@ -24,7 +24,13 @@ public class MessageService {
         return true;
     }
 
-    public Iterable<Message> findByTag(String filter) {
-        return messageRepository.findByTag(filter);
+    public Iterable<Message> findByManyParams(String text, String tag, Long id) {
+        return messageRepository.findByManyParams(text, tag, id);
+    }
+
+    public boolean checkMessageIsEmpty(Message message) {
+        return message.getId() == null &&
+                (message.getText().isEmpty() || message.getText() == null) &&
+                (message.getTag().isEmpty() || message.getTag() == null);
     }
 }

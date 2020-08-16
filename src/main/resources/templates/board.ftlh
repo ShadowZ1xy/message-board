@@ -36,19 +36,15 @@
                 <div class="column">
                     <div class="custom-input-form form-group">
                         <div class="row">
-                            <input type="text" class="col-12"
-                                   placeholder="Искать по нику автора">
+                            <textarea type="text" class="col-12" name="text" id="filter-area"
+                                      placeholder="Искать по паттерну текста"></textarea>
                         </div>
                         <div class="row">
-                            <input type="text" class="col-12"
+                            <input type="text" class="col-12" name="tag"
                                    placeholder="Искать по тэгу">
                         </div>
                         <div class="row">
-                            <input type="text" class="col-12"
-                                   placeholder="Искать по паттерну текста">
-                        </div>
-                        <div class="row">
-                            <input type="text" class="col-6" placeholder="Искать по id">
+                            <input type="text" class="col-6" placeholder="Искать по id" name="id">
                             <button class="col-6">Фильтрировать</button>
                         </div>
                     </div>
