@@ -1,3 +1,5 @@
+<#include "session.ftlh">
+
 <#macro header activeTab>
 
     <#switch activeTab>
@@ -32,7 +34,14 @@
                 <li class="nav-item ${activeProfile!}">
                     <a class="nav-link" href="/profile">Профиль</a>
                 </li>
+
             </ul>
+            <#if name=" " >
+                <a class="btn btn-success my-2 my-sm-0 login-button" type="Button" href="/login">Войти</a>
+                <a class="btn btn-info my-2 my-sm-0" type="Button" href="/registration">Регистрация</a>
+            <#else>
+                <a class="btn btn-danger my-2 my-sm-0" type="Button" href="/logout">Выйти</a>
+            </#if>
         </div>
     </nav>
 </#macro>
