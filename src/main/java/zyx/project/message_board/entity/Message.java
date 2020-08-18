@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Message {
@@ -16,7 +18,12 @@ public class Message {
     private Long id;
 
     @Column(columnDefinition = "TEXT")
+    @NotNull
+    @NotEmpty
     private String text;
+
+    @NotEmpty
+    @NotNull
     private String tag;
 
     @ManyToOne(fetch = FetchType.EAGER)
