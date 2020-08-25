@@ -7,13 +7,13 @@
                 <div class="column">
                     <div class="custom-input-form form-group">
                         <div class="row">
-                    <textarea placeholder="Введите текст"
-                              class="col-12"
-                              type="text"
-                              name="text"
-                              id="text-area"
-                              rows="3"></textarea>
-                            <div class="col-4">
+                            <textarea placeholder="Введите текст"
+                                      class="col-12"
+                                      type="text"
+                                      name="text"
+                                      id="text-area"
+                                      rows="3"></textarea>
+                            <div class="col-4 spacer">
                             </div>
                         </div>
                         <div class="row">

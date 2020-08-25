@@ -10,16 +10,12 @@
     <link rel="stylesheet" href="../static/loginstyle.css">
 </head>
 <body>
-
-
 <div class="modal-dialog text-center">
-
     <div class="col-sm-8 main-section">
         <div class="modal-content">
             <div class="col-12 user-img">
                 <img src="../img/avatar.png" alt="">
             </div>
-
             <form class="col-12" action="/registration" method="post">
                 <div class="form-group">
                     <input type="text"
@@ -28,7 +24,6 @@
                            name="username"
                     >
                 </div>
-
                 <div class="form-group">
                     <input class="form-control"
                            placeholder="Введите пароль"
@@ -39,20 +34,14 @@
                 <button type="submit" class="btn btn-primary" id="button">
                     Зарегистрироваться
                 </button>
-
-
                 <input type="hidden" name="_csrf" value="${_csrf.token}"/>
             </form>
-
             <div class="col-12 new-user">
                 <a href="/login">Уже есть аккаунт?</a>
             </div>
-
         </div>
     </div>
-
     <input type="hidden" id="alert" class="${warning!}">
-
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         var input = document.getElementById("alert");
@@ -63,6 +52,5 @@
         });
     </script>
 </div>
-
 </body>
 </html>

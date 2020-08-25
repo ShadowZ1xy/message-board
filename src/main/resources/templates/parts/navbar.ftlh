@@ -11,8 +11,6 @@
             <#break>
     </#switch>
 
-
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" id="app-name" href="/">Message board</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
@@ -28,8 +26,8 @@
                 <li class="nav-item ${activeBoard!}">
                     <a class="nav-link" href="/board">Стена сообщений</a>
                 </li>
-
             </ul>
+
             <#if name=" ">
                 <a class="btn btn-success my-2 my-sm-0 login-button" type="Button" href="/login">Войти</a>
                 <a class="btn btn-info my-2 my-sm-0" type="Button" href="/registration">Регистрация</a>
@@ -37,6 +35,7 @@
                 <a type="button" class="btn btn-outline-secondary navbar-username" href="/profile">Никнейм: ${name}</a>
                 <a class="btn btn-danger my-2 my-sm-0" type="Button" href="/logout">Выйти</a>
             </#if>
+
         </div>
     </nav>
 </#macro>
