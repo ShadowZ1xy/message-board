@@ -15,7 +15,7 @@ public class MessageService {
 
 
     public Iterable<Message> getAll() {
-        return messageRepository.findAll();
+        return messageRepository.findAllByOrderByIdDesc();
     }
 
     public boolean addMessage(Message message, WebUser user) {

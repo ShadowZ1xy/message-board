@@ -9,9 +9,6 @@ import zyx.project.message_board.entity.Message;
 import zyx.project.message_board.entity.WebUser;
 import zyx.project.message_board.service.MessageService;
 
-import java.util.Collections;
-import java.util.List;
-
 @Controller
 public class MessageBoardController {
 
@@ -25,7 +22,6 @@ public class MessageBoardController {
     @GetMapping("/board")
     public String boardPage(Model model) {
         Iterable<Message> messages = messageService.getAll();
-        Collections.reverse((List<?>) messages);
         model.addAttribute("messages", messages);
         return "board";
     }
@@ -49,7 +45,6 @@ public class MessageBoardController {
                 message.getTag(),
                 message.getId()
         );
-        Collections.reverse((List<?>) messages);
         model.addAttribute("messages", messages);
         return "board";
     }
