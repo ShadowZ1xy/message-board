@@ -26,22 +26,22 @@ public class UserController {
     public String userList(Model model) {
         Iterable<WebUser> users = userService.getAllUsers();
         model.addAttribute("users", users);
-        return "userList";
+        return "user-list";
     }
 
     @GetMapping("{user}")
     public String userEdit(@PathVariable WebUser user, Model model) {
         model.addAttribute("user", user);
         model.addAttribute("roles", WebUserRole.values());
-        return "userEdit";
+        return "user-edit";
     }
 
-    @PostMapping("saveUser")
+    @PostMapping("save-user")
     public String saveUser(@RequestParam WebUser user,
                            @RequestParam String username,
                            @RequestParam Map<String, String> form,
                            Model model) {
         userService.saveUser(user, username, form);
-        return "userEdit";
+        return "user-edit";
     }
 }
