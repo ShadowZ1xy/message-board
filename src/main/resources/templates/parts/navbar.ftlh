@@ -9,6 +9,9 @@
         <#case "board">
             <#assign activeBoard = "active">
             <#break>
+        <#case "user">
+            <#assign activeUser = "active">
+            <#break>
     </#switch>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -25,6 +28,9 @@
                 </li>
                 <li class="nav-item ${activeBoard!}">
                     <a class="nav-link" href="/board">Стена сообщений</a>
+                </li>
+                <li class="nav-item ${activeUser!}">
+                    <a class="nav-link" href="/user">Панель пользователей</a>
                 </li>
             </ul>
 

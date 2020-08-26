@@ -1,4 +1,13 @@
 /* body styles */
+
+td {
+    padding: 3px;
+}
+
+table {
+    margin-top: 10px;
+}
+
 .card {
     display: inline-block;
 }
