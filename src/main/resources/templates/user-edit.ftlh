@@ -3,7 +3,7 @@
 <@common.page title="Редактирование пользователя" activeTab="user">
     <div class="container">
         <h5>Редактор пользователя</h5>
-        <form action="/user/saveUser" method="post">
+        <form action="save-user" method="post">
             <label for="username">Имя пользователя:</label>
             <input type="text" name="username" value="${user.username}">
 
