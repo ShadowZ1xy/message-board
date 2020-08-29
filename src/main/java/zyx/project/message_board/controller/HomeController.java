@@ -7,8 +7,6 @@ import zyx.project.message_board.entity.Message;
 import zyx.project.message_board.service.MessageService;
 
 import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
@@ -22,7 +20,6 @@ public class HomeController {
     @GetMapping("/")
     public String homePage(Model model) {
         Collection<Message> messages = (Collection<Message>) messageService.getAll();
-        Collections.reverse((List<?>) messages);
         messages = messages.stream()
                 .limit(3)
                 .collect(Collectors.toList());
