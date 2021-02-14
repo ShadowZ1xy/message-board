@@ -14,6 +14,15 @@
             <#break>
     </#switch>
 
+    <#switch isAdmin>
+        <#case false>
+            <#assign showAdminPanel = "d-none">
+            <#break>
+        <#case true>
+            <#assign showAdminPanel = "">
+            <#break>
+    </#switch>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" id="app-name" href="/">Message board</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
@@ -29,7 +38,7 @@
                 <li class="nav-item ${activeBoard!}">
                     <a class="nav-link" href="/board">Стена сообщений</a>
                 </li>
-                <li class="nav-item ${activeUser!}">
+                <li class="nav-item ${activeUser!} ${showAdminPanel}">
                     <a class="nav-link" href="/user">Панель пользователей</a>
                 </li>
             </ul>

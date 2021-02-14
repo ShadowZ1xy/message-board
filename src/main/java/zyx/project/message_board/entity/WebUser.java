@@ -105,4 +105,8 @@ public class WebUser implements UserDetails {
     public void setRoles(Set<WebUserRole> roles) {
         this.roles = roles;
     }
+
+    public boolean isAdmin() {
+        return this.getRoles().contains(WebUserRole.ADMIN);
+    }
 }
